@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>GENERATIA TECH</title>
+		<style type="text/css">
+	label {
+	display: inline-block;
+	width: 200px;
+	margin: 5px;
+	text-align: left;
+	}
+	button {
+		margin: 10px;
+		padding: 10px;
+	}
+	input[type=text], input[type=password], select {
+	display: inline-block;
+	width: 200px;
+	}
+	input[type=checkbox]{
+	margin-right: 190px;
+	}
+	
+</style>
+
+<meta name="description" content="website description">
+<meta name="keywords" content="website keywords, website keywords">
+<meta http-equiv="content-type"
+	content="text/html; charset=windows-1252">
+<link rel="stylesheet" type="text/css" href="images/style.css">
+</head>
+<body>
+	<div id="main">
+		<div id="header">
+			<div id="logo">
+				<div id="logo_text">
+					<!-- class="logo_colour", allows you to change the colour of the text -->
+					<h1>
+						<a th:href="@{/home}">Bine ati venit in<span
+							class="logo_colour"> Brasov</span></a>
+					</h1>
+					<h2>Probably the best city in the world</h2>
+				</div>
+			</div>
+			<div id="menubar">
+				<ul id="menu">
+					<!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+					<li><a th:href="@{/piata}">Piata Sfatului</a></li>
+					<li><a th:href="@{/bn}">Biserica Neagra</a></li>
+					<li><a th:href="@{/tampa}">Tampa</a></li>
+					<li><a th:href="@{/strada}">Strada Sforii</a></li>
+					<li><a th:href="@{/bastion}">Bastionul Fierarilor</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="content_header"></div>
+		<div id="site_content">
+			<div id="banner"></div>
+			<div id="sidebar_container">
+				<div class="sidebar">
+					<div class="sidebar_top"></div>
+					<div class="sidebar_item">
+						<!-- insert your sidebar items here -->
+						<h3>Stiri</h3>
+						<h4>Generatia Tech</h4>
+						<h5>22 Decembrie 2022</h5>
+						<p>
+							Incepand cu 1 Februarie <b>Generatia Tech</b> recruteaza noi
+							exploreri. Daca doresti sa pui bazele unei cariere in programare,
+							<br> <a th:href="@{/inregistrare}">inregiastreaza-te</a>
+						</p>
+					</div>
+					<div class="sidebar_base"></div>
+				</div>
+				<div class="sidebar">
+					<div class="sidebar_top"></div>
+					<div class="sidebar_item">
+						<h3>Useful Links</h3>
+						<ul>
+							<li><a href="#">link 1</a></li>
+							<li><a href="#">link 2</a></li>
+							<li><a href="#">link 3</a></li>
+							<li><a href="#">link 4</a></li>
+						</ul>
+					</div>
+					<div class="sidebar_base"></div>
+				</div>
+				<div class="sidebar">
+					<div class="sidebar_top"></div>
+					<div class="sidebar_item"></div>
+					<div class="sidebar_base"></div>
+				</div>
+			</div>
+			<div id="content">
+	
+				<!-- insert the page content here -->
+ <form action="#" th:action="@{/register}" method="post" th:object="${utilizator}">
+        <label>Nume si prenume:</label>
+        <input type="text" th:field="*{nume}" /><br/>
+ 		<label>E-mail:</label>
+        <input type="text" th:field="*{email}" /><br/>
+         <label>Parola:</label>
+        <input type="password" th:field="*{parola}" /><br/>
+ 		<label>Data nasterii (aaaa-ll-zz):</label>
+        <input type="text" th:field="*{dataNasterii}" /><br/>
+        <label>Ocupatie:</label>
+        <select th:field="*{ocupatie}">
+        	<option th:each= "p : ${ocupatieList}" th:value="${p}" th:text="${p}" />
+        </select>
+ 		<label>Gen:</label>
+        <input type="radio" th:field="*{gen}" value="Male" />Masculin
+        <input type="radio" th:field="*{gen}" value="Female" />Feminin<br/>
+         <label>Casatorit/a?</label>
+        <input type="checkbox" th:field="*{casatorie}" /><br/>
+ 
+        <label>Observatii:</label>
+        <textarea rows="5" cols="25" th:field="*{obs}"></textarea>
+        <br/>
+
+ 
+ 
+ 
+ 
+ 
+ 
+   <button type="submit">Inregistrare</button>    
+    </form>
+
+				<div id="content_footer"></div>
+				<div id="footer">
+					<p>
+						<a th:href="@{/piata}">Piata Sfatului</a> | <a th:href="@{/bn}">Biserica
+							Neagra</a> | <a th:href="@{/tampa}">Tampa</a> | <a
+							th:href="@{/strada}">Strada Sforii</a> | <a th:href="@{/bastion}">Bastionul
+							Fierarilor</a>
+					</p>
+				</div>
+			</div>
+</body>
+</html>

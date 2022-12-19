@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>GENERATIA TECH</title>
+<meta name="description" content="website description">
+<meta name="keywords" content="website keywords, website keywords">
+<meta http-equiv="content-type"
+	content="text/html; charset=windows-1252">
+<link rel="stylesheet" type="text/css" href="images/style.css">
+</head>
+<body>
+	<div id="main">
+		<div id="header">
+			<div id="logo">
+				<div id="logo_text">
+					<!-- class="logo_colour", allows you to change the colour of the text -->
+					<h1>
+						<a th:href="@{/home}">Bine ati venit in<span
+							class="logo_colour"> Brasov</span></a>
+					</h1>
+					<h2>Probably the best city in the world</h2>
+				</div>
+			</div>
+			<div id="menubar">
+				<ul id="menu">
+					<!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+					<li><a th:href="@{/piata}">Piata Sfatului</a></li>
+					<li><a th:href="@{/bn}">Biserica Neagra</a></li>
+					<li><a th:href="@{/tampa}">Tampa</a></li>
+					<li><a th:href="@{/strada}">Strada Sforii</a></li>
+					<li><a th:href="@{/bastion}">Bastionul Fierarilor</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="content_header"></div>
+		<div id="site_content">
+			<div id="banner"></div>
+			
+		
+				<!-- insert the page content here -->
+				<h1>Inregistrare reusita</h1>
+   <span>Nume:</span><span th:text= "${utilizator.nume}"></span><br/>
+   <span>E-mail:</span><span th:text= "${utilizator.email}"></span><br/>
+   <span>Parla:</span><span th:text= "${utilizator.parola}"></span><br/>
+   <span>Data nasterii:</span><span th:text= "${utilizator.dataNasterii}"></span><br/>
+   <span>Ocupatie:</span><span th:text= "${utilizator.ocupatie}"></span>  <br/>
+   <span>Gen:</span><span th:text= "${utilizator.gen}"></span>  <br/>
+   <span>Casatorit/a?:</span><span th:text= "${utilizator.casatorie}"></span><br/>
+   <span>Observatii:</span><span th:text= "${utilizator.obs}"></span>
+
+   
+   
+         
+				<div id="content_footer"></div>
+				<div id="footer">
+					<p>
+						<a th:href="@{/piata}">Piata Sfatului</a> | <a th:href="@{/bn}">Biserica
+							Neagra</a> | <a th:href="@{/tampa}">Tampa</a> | <a
+							th:href="@{/strada}">Strada Sforii</a> | <a th:href="@{/bastion}">Bastionul
+							Fierarilor</a>
+					</p>
+				</div>
+			</div>
+</body>
+</html>
