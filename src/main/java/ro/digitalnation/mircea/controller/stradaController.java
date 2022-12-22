@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class stradaController {
 	
 	@GetMapping("/strada")
-	public String greeting(Model model) {	
+	public String introducere(Model model) {	
 	model.addAttribute("nume", "Strada Sforii");
 	model.addAttribute("descriere", "Cunoscută drept cea mai îngustă stradă din Europa, Strada Sforii a devenit una dintre cele mai importante locuri de vizitat din Brașov. Cu o vechime de câteva secole, strada a fost folosită drept legătură între Poarta Schei și Str. Cerbului.\r\n"
 			+ "\r\n"

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class tampaController {
 
 	@GetMapping("/tampa")
-	public String greeting(Model model) {	
+	public String introducere(Model model) {	
 	model.addAttribute("nume", "Punctul de belvedere de pe Tâmpa");
 	model.addAttribute("descriere", "Deși nu este un obiectiv turistic, Vârful Tâmpa reprezintă unul dintre cele mai frumoase locuri de vizitat din Brașov datorită platformei de belvedere care oferă o priveliște spectaculoasă asupra Brașovului. Aceasta este situată lângă semnul BRAȘOV vizibil din oraș.\r\n"
 			+ "\r\n"
